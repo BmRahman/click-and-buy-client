@@ -1,0 +1,74 @@
+[
+    {
+        "name": "iphone 13 pro max",
+        "category": "apple",
+        "img": "https://www.mobiledokan.com/wp-content/uploads/2021/10/Apple-iPhone-13-Pro-Max-image.jpg",
+        "location": "dhaka",
+        "buying price": 800,
+        "selling price": 500,
+        "years used": 1.5
+    },
+    { 
+        "name": "iphone 12 pro",
+        "category": "apple",
+        "img": "https://www.mobilebd.co/wp-content/uploads/2021/01/Apple-iPhone-12-Pro-.png",
+        "location": "dhaka",
+        "buying price": 700,
+        "selling price": 400,
+        "years used": 1
+    },
+    { 
+        "name": "galaxy note 20 ultra",
+        "category": "samsung",
+        "img": "https://www.mobiledor.com/wp-content/uploads/Samsung-Galaxy-Note20-Ultra.webp",
+        "location": "chittagong",
+        "buying price": 900,
+        "selling price": 750,
+        "years used": 0.6
+    },
+    { 
+        "name": "galaxy s21",
+        "category": "samsung",
+        "img": "https://www.mobiledokan.co/wp-content/uploads/2021/02/Samsung-Galaxy-S21-FE-5G.jpg",
+        "location": "sylhet",
+        "buying price": 800,
+        "selling price": 550,
+        "years used": 1.6
+    },
+    { 
+        "name": "redmi note 12 explorer",
+        "category": "xiaomi",
+        "img": "https://www.bdprice.com.bd/wp-content/uploads/2022/10/Xiaomi-Redmi-Note-12-Explorer-price-in-Bangladesh.jpg",
+        "location": "dhaka",
+        "buying price": 600,
+        "selling price": 350,
+        "years used": 0.6
+    },
+    { 
+        "name": "redmi k50 ultra",
+        "category": "xiaomi",
+        "img": "https://www.mobiledokan.co/wp-content/uploads/2022/05/Xiaomi-Redmi-K50-Ultra-Blue.jpg",
+        "location": "dhaka",
+        "buying price": 700,
+        "selling price": 500,
+        "years used": 1
+    },
+    { 
+        "name": "one plus 10r",
+        "category": "one plus",
+        "img": "https://www.mobiledokan.co/wp-content/uploads/2022/01/OnePlus-10R-Forest-Green.jpg",
+        "location": "khulna",
+        "buying price": 800,
+        "selling price": 500,
+        "years used": 0.5
+    },
+    { 
+        "name": "one plus 9 pro",
+        "category": "one plus",
+        "img": "https://www.mobiledokan.co/wp-content/uploads/2020/10/OnePlus-9-Pro-Pine-Green.jpg",
+        "location": "sylhet",
+        "buying price": 700,
+        "selling price": 400,
+        "years used": 1.5
+    }
+]
