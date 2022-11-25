@@ -1,8 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
+import React, { useState } from 'react';
 import { toast } from 'react-hot-toast';
+import UserDelete from './UserDelete/UserDelete';
 
 const AllUsers = () => {
+  const [deleteUser, setDeleteUser] = useState(null)
+
     const {data: users = [], refetch} = useQuery({
         queryKey: ['users'],
         queryFn: async() => {
@@ -28,6 +31,26 @@ const AllUsers = () => {
           }
         })
       }
+
+      const handleDeleteUser = user => {
+        fetch(`http://localhost:5000/users/${user._id}`, {
+          method: 'DELETE',
+          headers: {
+            authorization: `bearer ${localStorage.getItem('accessToken')}`
+          }
+        })
+        .then(res => res.json())
+        .then(data => {
+        console.log(data)
+        refetch()
+        toast.success('User removed successfully')
+      })
+      }
+  
+      const closeDeleteModal = () => {
+        setDeleteUser(null)
+      }
+
 
     return (
         <div>
@@ -55,12 +78,24 @@ const AllUsers = () => {
                     <td>{user.email}</td>
                     <td><button className='btn btn-xs btn-secondary'>Verify</button></td>
                     <td>{user?.role !== 'admin' && <button onClick={() => handleMakeAdmin(user._id)} className='btn btn-xs btn-primary'>Make Admin</button>}</td>
-                    <td><button className='btn btn-xs btn-error'>Delete</button></td>
+                    <td><label onClick={() => setDeleteUser(user)} htmlFor="user-delete" className='btn btn-xs btn-error'>Delete</label></td>
                   </tr>)
                   }
                   
                 </tbody>
               </table>
+              {
+                deleteUser &&
+                <UserDelete 
+                closeDeleteModal={closeDeleteModal}
+                handleDeleteUser={handleDeleteUser}
+                title={`Are you sure you want to remove ${deleteUser.name}?`}
+                message={`Removing this will be permenently delete ${deleteUser.name} from your database`}
+                modalData={deleteUser}
+                >
+
+                </UserDelete>
+              }
             </div>
         </div>
     );
