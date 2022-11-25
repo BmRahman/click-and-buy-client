@@ -27,7 +27,7 @@ const Header = () => {
                             </Link>
                             <ul className="p-2 z-10 bg-accent">
                               <li className='text-primary'><Link to='/allUsers'>All Users</Link></li>
-                              <li className='text-primary'><Link>Submenu 2</Link></li>
+                              <li className='text-primary'><Link to='/addproduct'>Add a Product</Link></li>
                             </ul>
                           </li>
                         <li><button onClick={handleSignOut} className='btn btn-outline btn-primary rounded-xl'>Log Out</button></li>

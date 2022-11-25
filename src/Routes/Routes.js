@@ -5,6 +5,7 @@ import Main from './../Layout/Main';
 import Login from './../Components/Login/Login';
 import Register from "../Components/Register/Register";
 import AllUsers from "../Components/Dashboard/AllUsers/AllUsers";
+import AddProduct from "../Components/Dashboard/AddProduct/AddProduct";
 
 export const router = createBrowserRouter([
     {
@@ -34,6 +35,10 @@ export const router = createBrowserRouter([
             {
                 path: '/allUsers',
                 element: <AllUsers></AllUsers>
+            },
+            {
+                path: '/addproduct',
+                element: <AddProduct></AddProduct>
             }
         ]
     }

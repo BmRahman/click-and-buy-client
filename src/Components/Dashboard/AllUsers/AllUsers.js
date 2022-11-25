@@ -57,13 +57,14 @@ const AllUsers = () => {
             <h2 className='text-center text-3xl font-bold mt-5 mb-10'>All Users</h2>
 
             <div className="overflow-x-auto mt-8">
-              <table className="table w-full">
+              <table className="table table-auto w-full">
                 
                 <thead>
                   <tr>
                     <th></th>
                     <th>Name</th>
                     <th>Email</th>
+                    <th>Role</th>
                     <th>Verify</th>
                     <th>Admin</th>
                     <th>Delete</th>
@@ -76,6 +77,7 @@ const AllUsers = () => {
                     <th>{i+1}</th>
                     <td>{user.name}</td>
                     <td>{user.email}</td>
+                    <td>{user.role}</td>
                     <td><button className='btn btn-xs btn-secondary'>Verify</button></td>
                     <td>{user?.role !== 'admin' && <button onClick={() => handleMakeAdmin(user._id)} className='btn btn-xs btn-primary'>Make Admin</button>}</td>
                     <td><label onClick={() => setDeleteUser(user)} htmlFor="user-delete" className='btn btn-xs btn-error'>Delete</label></td>
