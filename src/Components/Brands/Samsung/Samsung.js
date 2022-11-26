@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import SamsungCard from './SamsungCard/SamsungCard';
+import SamsungModal from '../../Bookings/SamsungModal';
 
 const Samsung = () => {
+    const [samsungPhone, setsamsungPhone] = useState(null)
     const {data: samsungs = []} = useQuery({
         queryKey: ['samsungs'],
         queryFn: async() => {
@@ -20,9 +22,13 @@ const Samsung = () => {
 
            <div className='grid grid-cols-1 lg:grid-cols-3 gap-5'>
            {
-            samsungs.map(samsung => <SamsungCard key={samsung._id} samsung={samsung}></SamsungCard>)
+            samsungs.map(samsung => <SamsungCard key={samsung._id} samsung={samsung} setsamsungPhone={setsamsungPhone}></SamsungCard>)
            }
            </div>
+           {
+            samsungPhone &&
+            <SamsungModal samsungPhone={samsungPhone}></SamsungModal>
+           }
         </div>
     );
 };

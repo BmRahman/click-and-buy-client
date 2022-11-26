@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import OneplusCard from './OneplusCard/OneplusCard';
+import OneplusModal from '../../Bookings/OneplusModal';
 
 const Oneplus = () => {
+    const [oneplusPhone, setOneplusPhone] = useState(null)
     const {data: onepluses = []} = useQuery({
         queryKey: ['onepluses'],
         queryFn: async() => {
@@ -18,9 +20,13 @@ const Oneplus = () => {
 
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-5'>
            {
-            onepluses.map(oneplus => <OneplusCard key={oneplus._id} oneplus={oneplus}></OneplusCard>)
+            onepluses.map(oneplus => <OneplusCard key={oneplus._id} oneplus={oneplus} setOneplusPhone={setOneplusPhone}></OneplusCard>)
            }
            </div>
+           {
+            oneplusPhone &&
+            <OneplusModal oneplusPhone={oneplusPhone}></OneplusModal>
+           }
         </div>
     );
 };

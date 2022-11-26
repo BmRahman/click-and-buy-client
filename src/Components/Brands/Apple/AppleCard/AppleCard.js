@@ -1,8 +1,10 @@
 import React from 'react';
+import AppleModal from '../../../Bookings/appleModal';
 
-const AppleCard = (apple) => {
-    console.log(apple)
-    const {category, date, email, image, location, prevPrice, price, product, seller, used} = apple.apple
+const AppleCard = ({apple, setApplePhone}) => {
+    const {category, date, email, image, location, prevPrice, price, product, seller, used} = apple
+
+
     return (
         <div className=''>
             <div className="card card-compact bg-base-100 shadow-xl">
@@ -26,7 +28,7 @@ const AppleCard = (apple) => {
                 </div>
                 <p>Posted on: {date}</p>
                 <div className="card-actions justify-end">
-                  <button className="btn btn-primary">Buy Now</button>
+                <label onClick={()=>setApplePhone(apple)} htmlFor="booking-modal" className="btn btn-primary">Book</label>
                 </div>
               </div>
             </div>

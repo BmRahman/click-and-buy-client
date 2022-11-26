@@ -1,6 +1,6 @@
 import React from 'react';
 
-const OneplusCard = ({oneplus}) => {
+const OneplusCard = ({oneplus, setOneplusPhone}) => {
     const {category, date, email, image, location, prevPrice, price, product, seller, used} = oneplus
 
     return (
@@ -26,7 +26,7 @@ const OneplusCard = ({oneplus}) => {
                 </div>
                 <p>Posted on: {date}</p>
                 <div className="card-actions justify-end">
-                  <button className="btn btn-primary">Buy Now</button>
+                <label onClick={() => setOneplusPhone(oneplus)} htmlFor="booking-modal" className="btn">open modal</label>
                 </div>
               </div>
             </div>

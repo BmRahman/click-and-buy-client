@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
+import SamsungModal from '../../../Bookings/SamsungModal';
 
-const SamsungCard = ({samsung}) => {
+const SamsungCard = ({samsung, setsamsungPhone}) => {
     const {category, date, email, image, location, prevPrice, price, product, seller, used} = samsung
+
 
     return (
         <div className='h-screen'>
@@ -26,7 +28,7 @@ const SamsungCard = ({samsung}) => {
                 </div>
                 <p>Posted on: {date}</p>
                 <div className="card-actions justify-end">
-                  <button className="btn btn-primary">Buy Now</button>
+                <label onClick={() => setsamsungPhone(samsung)} htmlFor="booking-modal" className="btn btn-primary">Book Now</label>
                 </div>
               </div>
             </div>

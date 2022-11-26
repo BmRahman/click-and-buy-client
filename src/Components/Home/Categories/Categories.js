@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom';
 const Categories = () => {
     return (
         <div className='mt-10 mb-10'>
+          <h2 className='text-center text-3xl text-accent font-bold capitalize mt-10 mb-10'>featured <span className='text-primary'>categories</span></h2>
             <div className='grid grid-cols-1 lg:grid-cols-4 gap-6'>
                 {/* card 1 */}
                 <div>

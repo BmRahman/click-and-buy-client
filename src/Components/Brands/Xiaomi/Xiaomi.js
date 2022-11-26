@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import XiaomiCard from './XiaomiCard/XiaomiCard';
+import XiaomiModal from '../../Bookings/XiaomiModal';
 
 const Xiaomi = () => {
+    const [xiaomiPhone, setXiaomiPhone] = useState(null)
     const {data: xiaomis = []} = useQuery({
         queryKey: ['xiaomis'],
         queryFn: async() => {
             const res = await fetch('http://localhost:5000/products/xiaomi')
             const data = await res.json()
-            console.log(data)
             return data
         }
     })
@@ -20,9 +21,13 @@ const Xiaomi = () => {
 
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-5'>
            {
-            xiaomis.map(xiaomi => <XiaomiCard key={xiaomi._id} xiaomi={xiaomi}></XiaomiCard>)
+            xiaomis.map(xiaomi => <XiaomiCard key={xiaomi._id} xiaomi={xiaomi} setXiaomiPhone={setXiaomiPhone}></XiaomiCard>)
            }
            </div>
+           {
+            xiaomiPhone &&
+            <XiaomiModal xiaomiPhone={xiaomiPhone}></XiaomiModal>
+           }
         </div>
     );
 };
