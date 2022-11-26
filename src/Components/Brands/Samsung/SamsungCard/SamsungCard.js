@@ -1,10 +1,10 @@
 import React from 'react';
 
-const AppleCard = (apple) => {
-    console.log(apple)
-    const {category, date, email, image, location, prevPrice, price, product, seller, used} = apple.apple
+const SamsungCard = ({samsung}) => {
+    const {category, date, email, image, location, prevPrice, price, product, seller, used} = samsung
+
     return (
-        <div className=''>
+        <div className='h-screen'>
             <div className="card card-compact bg-base-100 shadow-xl">
               <figure className='h-60'><img src={image} alt="Shoes" /></figure>
               <div className="card-body">
@@ -34,4 +34,4 @@ const AppleCard = (apple) => {
     );
 };
 
-export default AppleCard;
+export default SamsungCard;

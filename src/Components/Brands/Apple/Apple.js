@@ -17,7 +17,7 @@ const Apple = () => {
 
     return (
         <div>
-           <h2>our apple products</h2>
+           <h2 className='text-center capitalize font-bold text-primary text-3xl mt-10 mb-10'>our apple products</h2>
 
            <div className='grid grid-cols-1 lg:grid-cols-3 gap-5'>
            {
