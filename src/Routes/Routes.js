@@ -6,6 +6,12 @@ import Login from './../Components/Login/Login';
 import Register from "../Components/Register/Register";
 import AllUsers from "../Components/Dashboard/AllUsers/AllUsers";
 import AddProduct from "../Components/Dashboard/AddProduct/AddProduct";
+import Apple from "../Components/Brands/Apple/Apple";
+import Samsung from "../Components/Brands/Samsung/Samsung";
+import Xiaomi from './../Components/Brands/Xiaomi/Xiaomi';
+import Oneplus from './../Components/Brands/Oneplus/Oneplus';
+
+
 
 export const router = createBrowserRouter([
     {
@@ -39,6 +45,26 @@ export const router = createBrowserRouter([
             {
                 path: '/addproduct',
                 element: <AddProduct></AddProduct>
+            },
+            {
+                path: '/apple',
+                element: <Apple></Apple>,
+                loader: () => fetch('http://localhost:5000/products/apple')
+            },
+            {
+                path: '/samsung',
+                element: <Samsung></Samsung>,
+                loader: () => fetch('http://localhost:5000/products/sumsung')
+            },
+            {
+                path: '/xiaomi',
+                element: <Xiaomi></Xiaomi>,
+                loader: () => fetch('http://localhost:5000/products/xiaomi')
+            },
+            {
+                path: '/oneplus',
+                element: <Oneplus></Oneplus>,
+                loader: () => fetch('http://localhost:5000/products/oneplus')
             }
         ]
     }

@@ -1,4 +1,12 @@
 import React from 'react';
+import apple from '../../../Assets/apple.png';
+import samsung from '../../../Assets/samsung.jpg';
+import xiaomi from '../../../Assets/Xiaomi_logo.svg.png';
+import oneplus from '../../../Assets/oneplus.png';
+import { Link } from 'react-router-dom';
+
+
+
 
 const Categories = () => {
     return (
@@ -7,12 +15,11 @@ const Categories = () => {
                 {/* card 1 */}
                 <div>
                 <div className="card card-compact bg-base-100 shadow-xl">
-                  <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+                  <figure className='h-60'><img src={apple} alt="apple" /></figure>
                   <div className="card-body">
-                    <h2 className="card-title">Shoes!</h2>
-                    <p>If a dog chews shoes whose shoes does he choose?</p>
+                    <h2 className="card-title">Apple</h2>
                     <div className="card-actions justify-end">
-                      <button className="btn btn-primary">Buy Now</button>
+                      <Link to='/apple'><button className="btn btn-primary">Buy Now</button></Link>
                     </div>
                   </div>
                 </div>
@@ -20,12 +27,11 @@ const Categories = () => {
                 {/* card 2 */}
                 <div>
                 <div className="card card-compact  bg-base-100 shadow-xl">
-                  <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+                  <figure className='h-60'><img src={samsung} alt="samsung" /></figure>
                   <div className="card-body">
-                    <h2 className="card-title">Shoes!</h2>
-                    <p>If a dog chews shoes whose shoes does he choose?</p>
+                    <h2 className="card-title">Samsung</h2>
                     <div className="card-actions justify-end">
-                      <button className="btn btn-primary">Buy Now</button>
+                      <Link to='/samsung'><button className="btn btn-primary">Buy Now</button></Link>
                     </div>
                   </div>
                 </div>
@@ -33,25 +39,23 @@ const Categories = () => {
                 {/* card 3 */}
                 <div>
                 <div className="card card-compact bg-base-100 shadow-xl">
-                  <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+                  <figure className='h-60'><img src={xiaomi} alt="xiaomi" /></figure>
                   <div className="card-body">
-                    <h2 className="card-title">Shoes!</h2>
-                    <p>If a dog chews shoes whose shoes does he choose?</p>
+                    <h2 className="card-title">Xiaomi</h2>
                     <div className="card-actions justify-end">
-                      <button className="btn btn-primary">Buy Now</button>
+                      <Link to='/xiaomi'><button className="btn btn-primary">Buy Now</button></Link>
                     </div>
                   </div>
                 </div>
                 </div>
                 {/* card 4 */}
                 <div>
-                <div className="card card-compact  bg-base-100 shadow-xl">
-                  <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+                <div className="card card-compact bg-base-100 shadow-xl">
+                  <figure className='h-60'><img src={oneplus} alt="oneplus"/></figure>
                   <div className="card-body">
-                    <h2 className="card-title">Shoes!</h2>
-                    <p>If a dog chews shoes whose shoes does he choose?</p>
+                    <h2 className="card-title">Oneplus</h2>
                     <div className="card-actions justify-end">
-                      <button className="btn btn-primary">Buy Now</button>
+                      <Link to='/oneplus'><button className="btn btn-primary">Buy Now</button></Link>
                     </div>
                   </div>
                 </div>
