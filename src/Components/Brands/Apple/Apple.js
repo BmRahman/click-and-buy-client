@@ -6,13 +6,11 @@ import AppleModal from '../../Bookings/appleModal';
 
 const Apple = () => {
     const [applePhone, setApplePhone] = useState(null)
-    const {data: apples = []} = useQuery({
+    const {data: apples = [], refetch} = useQuery({
         queryKey: ['apples'],
         queryFn: async() => {
             const res = await fetch('http://localhost:5000/products/apple')
             const data = await res.json()
-            console.log(data)
-            console.log(apples)
             return data
         }
     })
@@ -30,7 +28,7 @@ const Apple = () => {
            </div>
            {
             applePhone &&
-            <AppleModal applePhone={applePhone}></AppleModal>
+            <AppleModal applePhone={applePhone} setApplePhone={setApplePhone} refetch={refetch}></AppleModal>
            }
         </div>
     );

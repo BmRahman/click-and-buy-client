@@ -5,7 +5,7 @@ import XiaomiModal from '../../Bookings/XiaomiModal';
 
 const Xiaomi = () => {
     const [xiaomiPhone, setXiaomiPhone] = useState(null)
-    const {data: xiaomis = []} = useQuery({
+    const {data: xiaomis = [], refetch} = useQuery({
         queryKey: ['xiaomis'],
         queryFn: async() => {
             const res = await fetch('http://localhost:5000/products/xiaomi')
@@ -26,7 +26,7 @@ const Xiaomi = () => {
            </div>
            {
             xiaomiPhone &&
-            <XiaomiModal xiaomiPhone={xiaomiPhone}></XiaomiModal>
+            <XiaomiModal xiaomiPhone={xiaomiPhone} setXiaomiPhone={setXiaomiPhone} refetch={refetch}></XiaomiModal>
            }
         </div>
     );

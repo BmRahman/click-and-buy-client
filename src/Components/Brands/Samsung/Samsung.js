@@ -5,7 +5,7 @@ import SamsungModal from '../../Bookings/SamsungModal';
 
 const Samsung = () => {
     const [samsungPhone, setsamsungPhone] = useState(null)
-    const {data: samsungs = []} = useQuery({
+    const {data: samsungs = [], refetch} = useQuery({
         queryKey: ['samsungs'],
         queryFn: async() => {
             const res = await fetch('http://localhost:5000/products/samsung')
@@ -27,7 +27,7 @@ const Samsung = () => {
            </div>
            {
             samsungPhone &&
-            <SamsungModal samsungPhone={samsungPhone}></SamsungModal>
+            <SamsungModal samsungPhone={samsungPhone} setsamsungPhone={setsamsungPhone} refetch={refetch}></SamsungModal>
            }
         </div>
     );

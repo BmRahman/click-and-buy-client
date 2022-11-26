@@ -5,7 +5,7 @@ import OneplusModal from '../../Bookings/OneplusModal';
 
 const Oneplus = () => {
     const [oneplusPhone, setOneplusPhone] = useState(null)
-    const {data: onepluses = []} = useQuery({
+    const {data: onepluses = [], refetch} = useQuery({
         queryKey: ['onepluses'],
         queryFn: async() => {
             const res = await fetch('http://localhost:5000/products/oneplus')
@@ -25,7 +25,7 @@ const Oneplus = () => {
            </div>
            {
             oneplusPhone &&
-            <OneplusModal oneplusPhone={oneplusPhone}></OneplusModal>
+            <OneplusModal oneplusPhone={oneplusPhone} setOneplusPhone={setOneplusPhone} refetch={refetch}></OneplusModal>
            }
         </div>
     );
