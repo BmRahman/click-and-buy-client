@@ -3,13 +3,14 @@ import { useForm } from 'react-hook-form';
 import { useQuery } from '@tanstack/react-query';
 import { toast } from 'react-hot-toast';
 import { AuthContext } from './../../../Contexts/AuthProvider';
+import moment from 'moment';
 
 
 const AddProduct = () => {
     const {user} = useContext(AuthContext)
     const { register, formState: { errors }, handleSubmit } = useForm();
     const imgHostKey = process.env.REACT_APP_imgbb_key
-    
+    const date = moment().format('lll');;
 
     const handleAddProduct = data => {
       console.log(data)
@@ -36,7 +37,8 @@ const AddProduct = () => {
                 prevPrice: data.marketprice,
                 price: data.sellingprice,
                 used: data.used,
-                email: data.email
+                email: data.email,
+                date: data.date
             }
 
             // posting product
@@ -156,10 +158,18 @@ const AddProduct = () => {
                 </label>
                 <input type="file" {...register("image", {required: "*Product image is required!"})} className="input w-full lg:w-3/5 mx-auto mb-3"/>
                 {errors.image && <p role="alert" className='text-red-400'>{errors.image?.message}</p>}
-                </div> <br/>
-                {/* <p>Forgot Password?</p> */}
-              {/* <p>{data}</p> */}
+                </div>   
             </div>
+
+            {/* date */}
+            <div className="form-control w-full">
+                <label className="label">
+                  <span className="label-text">Date</span>
+                </label>
+                <input type="text" defaultValue={date} readOnly {...register("date")} className="input input-bordered w-full mb-3"/>
+                {errors.date && <p role="alert" className='text-red-400'>{errors.date?.message}</p>}
+                </div>
+            {/* button */}
             <div className='w-full lg:w-2/5 mx-auto'>
             <button className='btn btn-accent w-full  mt-3 mb-3' type='submit'>Add Product</button>
             </div>

@@ -2,7 +2,7 @@ import React from 'react';
 
 const AppleCard = (apple) => {
     console.log(apple)
-    const {category, email, image, location, prevPrice, price, product, seller, used} = apple.apple
+    const {category, date, email, image, location, prevPrice, price, product, seller, used} = apple.apple
     return (
         <div>
             <div className="card card-compact bg-base-100 shadow-xl">
@@ -24,6 +24,7 @@ const AppleCard = (apple) => {
                 <p><strong>Category: {category}</strong></p>
                 <p><strong>Years Used: {used}</strong></p>
                 </div>
+                <p>Posted on: {date}</p>
                 <div className="card-actions justify-end">
                   <button className="btn btn-primary">Buy Now</button>
                 </div>
