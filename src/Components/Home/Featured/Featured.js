@@ -14,13 +14,9 @@ const Featured = () => {
         }
     })
 
-    const closeModal = () => {
-        setFeaturedPhone(null)
-    }
-
     return (
-        <div>
-            <h2 className='text-3xl font-bold text-center mb-10'>Featured <span className='text-primary'>Products</span></h2>
+        <div className=' mb-20'>
+            <h2 className='text-3xl font-bold text-center mt-20 mb-10'>Featured <span className='text-primary'>Products</span></h2>
            <div className='grid grid-cols-1 lg:grid-cols-4 gap-6'>
            {
                 featureds.map(featured => <FeaturedCard 
