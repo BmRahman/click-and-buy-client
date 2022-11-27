@@ -10,7 +10,7 @@ const Banner = () => {
           <img src={click} className=" rounded-lg shadow-2xl lg:mx-auto" alt=''/>
           </div>
           <div className='w-full lg:w-2/4'>
-            <h1 className="text-4xl lg:text-5xl font-bold">Shopping is now just<br/> one click away</h1>
+            <h1 className="text-4xl lg:text-5xl font-bold capitalize">Best efforts for<br/> your dream phone</h1>
             <p className="py-6">Click & Buy is the leading reCommerce company that buys and sells pre-owned consumer electronics. We provide our customers with simple selling options by purchasing their used smartphones, tablets, and more. We then inspect, certify and sell them to consumers looking for a cost-effective way to stay connected. Click & Buy is simple, convenient, and it works for everyone.</p>
             <button className="btn btn-primary bg-gradient-to-r from-secondary to-primary text-white">Get Started</button>
           </div>

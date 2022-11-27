@@ -10,6 +10,8 @@ import Apple from "../Components/Brands/Apple/Apple";
 import Samsung from "../Components/Brands/Samsung/Samsung";
 import Xiaomi from './../Components/Brands/Xiaomi/Xiaomi';
 import Oneplus from './../Components/Brands/Oneplus/Oneplus';
+import MyOrders from "../Components/Dashboard/MyOrders/MyOrders";
+import MyProducts from "../Components/Dashboard/MyProducts/MyProducts";
 
 
 
@@ -65,6 +67,14 @@ export const router = createBrowserRouter([
                 path: '/oneplus',
                 element: <Oneplus></Oneplus>,
                 loader: () => fetch('http://localhost:5000/products/oneplus')
+            },
+            {
+                path: '/myorders',
+                element: <MyOrders></MyOrders>
+            },
+            {
+                path: '/myproducts',
+                element: <MyProducts></MyProducts>
             }
         ]
     }
