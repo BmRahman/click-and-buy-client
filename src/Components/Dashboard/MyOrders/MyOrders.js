@@ -47,7 +47,7 @@ const MyOrders = () => {
 
     return (
         <div className='h-screen'>
-            <h2 className='text-3xl font-bold text-center text-primary'>MyOrders</h2>
+            <h2 className='text-3xl font-bold text-center text-primary'>My Orders</h2>
 
             <div className="overflow-x-auto mt-10">
               <table className="table w-full">
@@ -66,7 +66,7 @@ const MyOrders = () => {
                 <tbody>
 
                 {
-                  bookings.length < 1  ? <p className='text-xl font-bold mt-5'>No Appointments Taken Yet</p> :
+                  bookings.length < 1  ? <p className='text-xl font-bold mt-5'>No Orders Booked Yet</p> :
                     bookings.map((booking, i) => <tr key={booking._id}>
                     <th>{i+1}</th>
                     <td>{booking.product}</td>

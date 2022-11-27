@@ -78,7 +78,7 @@ const AllUsers = () => {
                     <td>{user.name}</td>
                     <td>{user.email}</td>
                     <td>{user.role}</td>
-                    <td><button className='btn btn-xs btn-secondary'>Verify</button></td>
+                    <td>{user?.role === 'Seller' && <button className='btn btn-xs btn-secondary'>Verify</button>}</td>
                     <td>{user?.role !== 'admin' && <button onClick={() => handleMakeAdmin(user._id)} className='btn btn-xs btn-primary'>Make Admin</button>}</td>
                     <td><label onClick={() => setDeleteUser(user)} htmlFor="user-delete" className='btn btn-xs btn-error'>Delete</label></td>
                   </tr>)
