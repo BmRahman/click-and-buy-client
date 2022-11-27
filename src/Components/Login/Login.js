@@ -1,14 +1,17 @@
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { AuthContext } from './../../Contexts/AuthProvider';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const {loginUser, googleLogin} = useContext(AuthContext)
     const [loginError, setLoginError] = useState('')
 
+    let location = useLocation()
     const navigate = useNavigate()
+
+    let from = location.state?.from?.pathname || "/";
 
     const handleLogin = data => {
         console.log(data)
@@ -17,7 +20,7 @@ const Login = () => {
         .then(res => {
           const user = res.user;
           console.log(user)
-          navigate('/')
+          navigate(from, { replace: true })
         })
         .catch(error => {
           console.error(error.message)

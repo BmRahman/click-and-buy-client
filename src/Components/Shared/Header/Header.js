@@ -1,10 +1,16 @@
+import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/AuthProvider';
 
-const Header = () => {
-    const {user, logoutUser} = useContext(AuthContext)
 
+
+const Header = () => {
+  const {user, logoutUser} = useContext(AuthContext)
+  
+
+
+  console.log(user)
     const handleSignOut = () => {
       logoutUser()
       .then(() => {})
@@ -26,7 +32,7 @@ const Header = () => {
                               <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
                             </Link>
                             <ul className="p-2 z-10 bg-accent">
-                              <li className='text-primary'><Link to='/allUsers'>All Users</Link></li>
+                            <li className='text-primary'><Link to='/allUsers'>All Users</Link></li>
                               <li className='text-primary'><Link to='/addproduct'>Add a Product</Link></li>
                               <li className='text-primary'><Link to='/myorders'>My Orders</Link></li>
                               <li className='text-primary'><Link to='/myproducts'>My Products</Link></li>

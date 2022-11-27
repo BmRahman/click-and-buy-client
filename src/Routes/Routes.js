@@ -12,6 +12,7 @@ import Xiaomi from './../Components/Brands/Xiaomi/Xiaomi';
 import Oneplus from './../Components/Brands/Oneplus/Oneplus';
 import MyOrders from "../Components/Dashboard/MyOrders/MyOrders";
 import MyProducts from "../Components/Dashboard/MyProducts/MyProducts";
+import PrivateRoute from "./PrivateRoute";
 
 
 
@@ -50,22 +51,22 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/apple',
-                element: <Apple></Apple>,
+                element: <PrivateRoute><Apple></Apple></PrivateRoute>,
                 loader: () => fetch('http://localhost:5000/products/apple')
             },
             {
                 path: '/samsung',
-                element: <Samsung></Samsung>,
+                element: <PrivateRoute><Samsung></Samsung></PrivateRoute>,
                 loader: () => fetch('http://localhost:5000/products/sumsung')
             },
             {
                 path: '/xiaomi',
-                element: <Xiaomi></Xiaomi>,
+                element: <PrivateRoute><Xiaomi></Xiaomi></PrivateRoute>,
                 loader: () => fetch('http://localhost:5000/products/xiaomi')
             },
             {
                 path: '/oneplus',
-                element: <Oneplus></Oneplus>,
+                element: <PrivateRoute><Oneplus></Oneplus></PrivateRoute>,
                 loader: () => fetch('http://localhost:5000/products/oneplus')
             },
             {

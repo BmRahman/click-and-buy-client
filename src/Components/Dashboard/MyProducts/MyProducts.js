@@ -23,6 +23,23 @@ const MyProducts = () => {
         }
     })
 
+    const handleAdvertise = product => {
+        fetch('http://localhost:5000/advertised', {
+          method: 'POST',
+          headers: {
+            'content-Type': 'application/json',
+            authorization: `bearer ${localStorage.getItem('accessToken')}`
+          },
+          body: JSON.stringify(product)
+        })
+        .then(res => res.json())
+        .then(data => {
+          console.log(data)
+          toast.success('Product Advertised Successfully')
+        })
+
+    }
+
     const handleDeleteProduct = product => {
         fetch(`http://localhost:5000/products/${product._id}`, {
             method: 'DELETE',
@@ -76,7 +93,7 @@ const MyProducts = () => {
                     <td>{
                           
                           <Link>
-                            <button className='btn btn-sm btn-primary'>Advertise</button>
+                            <button onClick={() => handleAdvertise(product)} className='btn btn-sm btn-primary'>Advertise</button>
                           </Link>
                       }
                       
