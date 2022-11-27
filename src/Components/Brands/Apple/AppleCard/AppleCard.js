@@ -1,5 +1,6 @@
 import React from 'react';
-import AppleModal from '../../../Bookings/appleModal';
+import { TiTick } from 'react-icons/ti';
+
 
 const AppleCard = ({apple, setApplePhone}) => {
     const {category, date, email, image, location, prevPrice, price, product, seller, used} = apple

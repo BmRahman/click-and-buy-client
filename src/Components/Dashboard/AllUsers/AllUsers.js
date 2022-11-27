@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import React, { useState } from 'react';
 import { toast } from 'react-hot-toast';
 import UserDelete from './UserDelete/UserDelete';
+import { TiTick } from 'react-icons/ti';
 
 const AllUsers = () => {
   const [deleteUser, setDeleteUser] = useState(null)
@@ -32,6 +33,24 @@ const AllUsers = () => {
         })
       }
 
+      const handleVerify = id => {
+        fetch(`http://localhost:5000/users/verified/${id}`, {
+          method: 'PUT',
+          headers: {
+            authorization: `bearer ${localStorage.getItem('accessToken')}`
+          }
+        })
+        .then(res => res.json())
+        .then(data => {
+          console.log(data)
+          if(data.modifiedCount > 0){
+            toast.success('User verified succesfully')
+            refetch()
+          }
+        })
+      }
+
+
       const handleDeleteUser = user => {
         fetch(`http://localhost:5000/users/${user._id}`, {
           method: 'DELETE',
@@ -53,7 +72,7 @@ const AllUsers = () => {
 
 
     return (
-        <div>
+        <div className='h-screen'>
             <h2 className='text-center text-3xl font-bold mt-5 mb-10'>All Users</h2>
 
             <div className="overflow-x-auto mt-8">
@@ -78,7 +97,13 @@ const AllUsers = () => {
                     <td>{user.name}</td>
                     <td>{user.email}</td>
                     <td>{user.role}</td>
-                    <td>{user?.role === 'Seller' && <button className='btn btn-xs btn-secondary'>Verify</button>}</td>
+                    <td>{user?.role === 'Seller' && user?.verified !== 'yes' &&
+                     <button onClick={() => handleVerify(user._id)} className='btn btn-xs btn-secondary'>Verify</button>}
+                    {
+                      user?.role === 'Seller' && user?.verified === 'yes' && 
+                      <button className='btn btn-xs btn-outline text-blue-600'>Verified <TiTick className='text-blue-600'></TiTick></button>
+                    }
+                    </td>
                     <td>{user?.role !== 'admin' && <button onClick={() => handleMakeAdmin(user._id)} className='btn btn-xs btn-primary'>Make Admin</button>}</td>
                     <td><label onClick={() => setDeleteUser(user)} htmlFor="user-delete" className='btn btn-xs btn-error'>Delete</label></td>
                   </tr>)
