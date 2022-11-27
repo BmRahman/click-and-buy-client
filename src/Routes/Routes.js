@@ -13,6 +13,9 @@ import Oneplus from './../Components/Brands/Oneplus/Oneplus';
 import MyOrders from "../Components/Dashboard/MyOrders/MyOrders";
 import MyProducts from "../Components/Dashboard/MyProducts/MyProducts";
 import PrivateRoute from "./PrivateRoute";
+import AdminRoute from "./AdminRoute";
+import SellerRoute from "./SellerRoute";
+import BuyerRoute from "./BuyerRoute";
 
 
 
@@ -43,11 +46,19 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/allUsers',
-                element: <AllUsers></AllUsers>
+                element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
             },
             {
                 path: '/addproduct',
-                element: <AddProduct></AddProduct>
+                element: <SellerRoute><AddProduct></AddProduct></SellerRoute>
+            },         
+            {
+                path: '/myproducts',
+                element: <SellerRoute><MyProducts></MyProducts></SellerRoute>
+            },
+            {
+                path: '/myorders',
+                element: <BuyerRoute><MyOrders></MyOrders></BuyerRoute>
             },
             {
                 path: '/apple',
@@ -68,15 +79,8 @@ export const router = createBrowserRouter([
                 path: '/oneplus',
                 element: <PrivateRoute><Oneplus></Oneplus></PrivateRoute>,
                 loader: () => fetch('http://localhost:5000/products/oneplus')
-            },
-            {
-                path: '/myorders',
-                element: <MyOrders></MyOrders>
-            },
-            {
-                path: '/myproducts',
-                element: <MyProducts></MyProducts>
             }
+            
         ]
     }
 ])

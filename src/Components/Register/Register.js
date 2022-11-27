@@ -25,7 +25,8 @@ const Register = () => {
             const user = res.user;
             console.log(user)
             const userInfo = {
-              displayName: data.name
+              displayName: data.name,
+              userRole: data.role
             }
             updateUser(userInfo)
             .then(() => {
