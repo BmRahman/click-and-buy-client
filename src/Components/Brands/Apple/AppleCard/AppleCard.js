@@ -7,7 +7,7 @@ const AppleCard = ({apple, setApplePhone}) => {
 
 
     return (
-        <div className=''>
+        <div className='mb-10'>
             <div className="card card-compact bg-base-100 shadow-xl">
               <figure className='h-60'><img src={image} alt="apple" className='h-60'/></figure>
               <div className="card-body">

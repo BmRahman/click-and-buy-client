@@ -62,7 +62,7 @@ const MyProducts = () => {
 
 
     return (
-        <div>
+        <div className='h-screen'>
             <h2 className='text-3xl font-bold text-center text-primary'>My Products</h2>
             
             <div className="overflow-x-auto mt-10">
