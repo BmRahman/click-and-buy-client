@@ -8,7 +8,7 @@ const Featured = () => {
     const {data: featureds = [], refetch} = useQuery({
         queryKey: ['featureds'],
         queryFn: async() => {
-            const res = await fetch('http://localhost:5000/advertised')
+            const res = await fetch('https://click-server.vercel.app/advertised')
             const data = res.json()
             return data
         }

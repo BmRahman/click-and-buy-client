@@ -8,7 +8,7 @@ import DeleteProduct from './DeleteProduct/DeleteProduct';
 const MyProducts = () => {
     const [deleteProduct, setDeleteProduct] = useState(null)
     const {user} = useContext(AuthContext)
-    const url = `http://localhost:5000/products?email=${user?.email}`
+    const url = `https://click-server.vercel.app/products?email=${user?.email}`
 
     const {data: products = [], refetch} = useQuery({
         queryKey: ['products', user?.email],
@@ -24,7 +24,7 @@ const MyProducts = () => {
     })
 
     const handleAdvertise = product => {
-        fetch('http://localhost:5000/advertised', {
+        fetch('https://click-server.vercel.app/advertised', {
           method: 'POST',
           headers: {
             'content-Type': 'application/json',
@@ -41,7 +41,7 @@ const MyProducts = () => {
     }
 
     const handleDeleteProduct = product => {
-        fetch(`http://localhost:5000/products/${product._id}`, {
+        fetch(`https://click-server.vercel.app/products/${product._id}`, {
             method: 'DELETE',
           headers: {
             authorization: `bearer ${localStorage.getItem('accessToken')}`

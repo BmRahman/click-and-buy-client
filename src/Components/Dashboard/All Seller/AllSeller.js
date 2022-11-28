@@ -13,14 +13,14 @@ const AllSeller = () => {
     const {data: sellers = [], refetch} =useQuery({
         queryKey: ['sellers'],
         queryFn: async() => {
-            const res = await fetch(`http://localhost:5000/users/Seller`)
+            const res = await fetch(`https://click-server.vercel.app/users/Seller`)
             const data = res.json()
             return data
         }
     })
 
     const handleMakeAdmin = id => {
-        fetch(`http://localhost:5000/users/admin/${id}`, {
+        fetch(`https://click-server.vercel.app/users/admin/${id}`, {
           method: 'PUT',
           headers: {
             authorization: `bearer ${localStorage.getItem('accessToken')}`
@@ -37,7 +37,7 @@ const AllSeller = () => {
       }
 
       const handleDeleteSeller= user => {
-        fetch(`http://localhost:5000/users/${user._id}`, {
+        fetch(`https://click-server.vercel.app/users/${user._id}`, {
           method: 'DELETE',
           headers: {
             authorization: `bearer ${localStorage.getItem('accessToken')}`
@@ -52,7 +52,7 @@ const AllSeller = () => {
       }
 
       const handleVerify = id => {
-        fetch(`http://localhost:5000/users/verified/${id}`, {
+        fetch(`https://click-server.vercel.app/users/verified/${id}`, {
           method: 'PUT',
           headers: {
             authorization: `bearer ${localStorage.getItem('accessToken')}`

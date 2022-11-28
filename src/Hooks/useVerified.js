@@ -5,7 +5,7 @@ const useVerified = email => {
     const [isVerifiedLoading, setisVerifiedLoading] = useState(true)
 useEffect(() => {
     if(email){
-        fetch(`http://localhost:5000/users/verifiedseller/${email}`)
+        fetch(`https://click-server.vercel.app/users/verifiedseller/${email}`)
         .then(res => res.json())
         .then(data => {
             console.log(data)

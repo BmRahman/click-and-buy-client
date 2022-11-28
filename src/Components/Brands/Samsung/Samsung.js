@@ -8,7 +8,7 @@ const Samsung = () => {
     const {data: samsungs = [], refetch} = useQuery({
         queryKey: ['samsungs'],
         queryFn: async() => {
-            const res = await fetch('http://localhost:5000/products/samsung')
+            const res = await fetch('https://click-server.vercel.app/products/samsung')
             const data = await res.json()
             return data
         }

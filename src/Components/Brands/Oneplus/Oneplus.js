@@ -8,7 +8,7 @@ const Oneplus = () => {
     const {data: onepluses = [], refetch} = useQuery({
         queryKey: ['onepluses'],
         queryFn: async() => {
-            const res = await fetch('http://localhost:5000/products/oneplus')
+            const res = await fetch('https://click-server.vercel.app/products/oneplus')
             const data = await res.json()
             console.log(data)
             return data

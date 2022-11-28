@@ -73,22 +73,22 @@ export const router = createBrowserRouter([
             {
                 path: '/apple',
                 element: <PrivateRoute><Apple></Apple></PrivateRoute>,
-                loader: () => fetch('http://localhost:5000/products/apple')
+                loader: () => fetch('https://click-server.vercel.app/products/apple')
             },
             {
                 path: '/samsung',
                 element: <PrivateRoute><Samsung></Samsung></PrivateRoute>,
-                loader: () => fetch('http://localhost:5000/products/sumsung')
+                loader: () => fetch('https://click-server.vercel.app/products/sumsung')
             },
             {
                 path: '/xiaomi',
                 element: <PrivateRoute><Xiaomi></Xiaomi></PrivateRoute>,
-                loader: () => fetch('http://localhost:5000/products/xiaomi')
+                loader: () => fetch('https://click-server.vercel.app/products/xiaomi')
             },
             {
                 path: '/oneplus',
                 element: <PrivateRoute><Oneplus></Oneplus></PrivateRoute>,
-                loader: () => fetch('http://localhost:5000/products/oneplus')
+                loader: () => fetch('https://click-server.vercel.app/products/oneplus')
             }
             
         ]

@@ -9,14 +9,14 @@ const AllBuyer = () => {
     const {data: buyers = [], refetch} =useQuery({
         queryKey: ['buyers'],
         queryFn: async() => {
-            const res = await fetch(`http://localhost:5000/users/Buyer`)
+            const res = await fetch(`https://click-server.vercel.app/users/Buyer`)
             const data = res.json()
             return data
         }
     })
 
     const handleDeleteBuyer= user => {
-        fetch(`http://localhost:5000/users/${user._id}`, {
+        fetch(`https://click-server.vercel.app/users/${user._id}`, {
           method: 'DELETE',
           headers: {
             authorization: `bearer ${localStorage.getItem('accessToken')}`

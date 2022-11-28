@@ -8,9 +8,9 @@ import { toast } from 'react-hot-toast';
 const MyOrders = () => {
     const [deleteOrder, setDeleteOrder] = useState(null)
     const {user} = useContext(AuthContext)
-    const url = `http://localhost:5000/bookings?email=${user?.email}`
+    const url = `https://click-server.vercel.app/bookings?email=${user?.email}`
 
-    // http://localhost:5000/bookings?email=tom@gmail.com
+    // https://click-server.vercel.app/bookings?email=tom@gmail.com
 
     const {data: bookings = [], refetch} = useQuery({
         queryKey: ['bookings', user?.email],
@@ -26,7 +26,7 @@ const MyOrders = () => {
     })
 
     const handleDeleteOrder = booking => {
-        fetch(`http://localhost:5000/bookings/${booking._id}`, {
+        fetch(`https://click-server.vercel.app/bookings/${booking._id}`, {
             method: 'DELETE',
           headers: {
             authorization: `bearer ${localStorage.getItem('accessToken')}`

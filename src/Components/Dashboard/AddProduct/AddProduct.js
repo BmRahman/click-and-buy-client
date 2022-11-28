@@ -8,7 +8,7 @@ import moment from 'moment';;
 
 const AddProduct = () => {
     const {user} = useContext(AuthContext)
-    
+
     const { register, formState: { errors }, handleSubmit } = useForm();
     const imgHostKey = process.env.REACT_APP_imgbb_key
     const date = moment().format('lll');;
@@ -43,7 +43,7 @@ const AddProduct = () => {
             }
 
             // posting product
-            fetch('http://localhost:5000/products', {
+            fetch('https://click-server.vercel.app/products', {
               method: 'POST',
               headers: {
                 'content-type': 'application/json',
