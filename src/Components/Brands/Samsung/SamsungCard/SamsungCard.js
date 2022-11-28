@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
-import SamsungModal from '../../../Bookings/SamsungModal';
+import React, { useContext} from 'react';
+import { TiTick } from 'react-icons/ti';
+import { AuthContext } from '../../../../Contexts/AuthProvider';
+import useVerified from './../../../../Hooks/useVerified';
 
 const SamsungCard = ({samsung, setsamsungPhone}) => {
     const {category, date, email, image, location, prevPrice, price, product, seller, used} = samsung
 
+    const {user} = useContext(AuthContext)
+    
 
     return (
         <div className='h-screen'>
@@ -12,6 +16,7 @@ const SamsungCard = ({samsung, setsamsungPhone}) => {
               <div className="card-body">
                 <h2 className="card-title text-xl font-bold capitalize">{product}</h2>
                 {/* first div */}
+                
                 
                 <p className='text-lg'><strong>Seller Name: {seller}</strong></p>
                 <p className='text-lg'><strong>Seller Location: {location}</strong></p>

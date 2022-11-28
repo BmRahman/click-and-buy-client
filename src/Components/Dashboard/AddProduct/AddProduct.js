@@ -8,6 +8,7 @@ import moment from 'moment';;
 
 const AddProduct = () => {
     const {user} = useContext(AuthContext)
+    
     const { register, formState: { errors }, handleSubmit } = useForm();
     const imgHostKey = process.env.REACT_APP_imgbb_key
     const date = moment().format('lll');;

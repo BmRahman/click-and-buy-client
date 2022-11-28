@@ -10,11 +10,10 @@ const Samsung = () => {
         queryFn: async() => {
             const res = await fetch('http://localhost:5000/products/samsung')
             const data = await res.json()
-            console.log(data)
             return data
         }
     })
-
+   
 
     return (
         <div>

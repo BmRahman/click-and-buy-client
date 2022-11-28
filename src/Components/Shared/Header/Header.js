@@ -25,7 +25,7 @@ const Header = () => {
                       <>
                       <li><Link to='/' className='text-lg hover:text-primary'>Home</Link></li>
                       {
-                        user?.emai &&
+                        user?.email &&
                         <>
                         <li>
                         <Link>
@@ -104,7 +104,7 @@ const Header = () => {
                 </div>
                 
               <div className="flex-1">
-                <Link to='/' className='font-bold text-lg'>Click & Buy</Link>
+                <Link to='/' className='font-bold text-lg'>Click & <span className='text-primary'>Buy</span></Link>
               </div>
              
                 
