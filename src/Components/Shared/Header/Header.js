@@ -50,6 +50,8 @@ const Header = () => {
                                 isBuyer &&
                                 <li className='text-primary'><Link to='/myorders'>My Orders</Link></li>
                               }
+                                <li className='text-primary'><Link to='/allsellers'>All Seller</Link></li>
+
                             </ul>
                           </li>
                         <li><button onClick={handleSignOut} className='btn btn-outline btn-primary rounded-xl'>Log Out</button></li>
