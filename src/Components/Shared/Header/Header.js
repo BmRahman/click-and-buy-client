@@ -37,7 +37,10 @@ const Header = () => {
                             <ul className="p-2 z-10 bg-accent">
                               {
                                 isAdmin &&
-                                <li className='text-primary'><Link to='/allUsers'>All Users</Link></li>
+                                <>
+                                <li className='text-primary'><Link to='/allsellers'>All Seller</Link></li>
+                                <li className='text-primary'><Link to='/allbuyers'>All Buyer</Link></li>
+                                </>
                               }
                               {
                                 isSeller && 
@@ -50,7 +53,7 @@ const Header = () => {
                                 isBuyer &&
                                 <li className='text-primary'><Link to='/myorders'>My Orders</Link></li>
                               }
-                                <li className='text-primary'><Link to='/allsellers'>All Seller</Link></li>
+                                
 
                             </ul>
                           </li>

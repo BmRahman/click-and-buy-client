@@ -16,7 +16,7 @@ const Categories = () => {
                 {/* card 1 */}
                 <div>
                 <div className="card card-compact bg-base-100 shadow-xl">
-                  <figure className='h-60'><img src={apple} alt="apple" /></figure>
+                  <figure className='h-60'><img src={apple} alt="apple" className='h-60'/></figure>
                   <div className="card-body">
                     <h2 className="card-title">Apple</h2>
                     <div className="card-actions justify-end">
@@ -28,7 +28,7 @@ const Categories = () => {
                 {/* card 2 */}
                 <div>
                 <div className="card card-compact  bg-base-100 shadow-xl">
-                  <figure className='h-60'><img src={samsung} alt="samsung" /></figure>
+                  <figure className='h-60'><img src={samsung} alt="samsung" className='h-60'/></figure>
                   <div className="card-body">
                     <h2 className="card-title">Samsung</h2>
                     <div className="card-actions justify-end">
@@ -40,7 +40,7 @@ const Categories = () => {
                 {/* card 3 */}
                 <div>
                 <div className="card card-compact bg-base-100 shadow-xl">
-                  <figure className='h-60'><img src={xiaomi} alt="xiaomi" /></figure>
+                  <figure className='h-60'><img src={xiaomi} alt="xiaomi" className='h-60'/></figure>
                   <div className="card-body">
                     <h2 className="card-title">Xiaomi</h2>
                     <div className="card-actions justify-end">
@@ -52,7 +52,7 @@ const Categories = () => {
                 {/* card 4 */}
                 <div>
                 <div className="card card-compact bg-base-100 shadow-xl">
-                  <figure className='h-60'><img src={oneplus} alt="oneplus"/></figure>
+                  <figure className='h-60'><img src={oneplus} alt="oneplus" className='h-60'/></figure>
                   <div className="card-body">
                     <h2 className="card-title">Oneplus</h2>
                     <div className="card-actions justify-end">

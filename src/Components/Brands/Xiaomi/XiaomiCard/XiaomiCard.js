@@ -6,7 +6,7 @@ const XiaomiCard = ({xiaomi, setXiaomiPhone}) => {
     return (
       <div className=''>
       <div className="card card-compact bg-base-100 shadow-xl">
-        <figure className='h-60'><img src={image} alt="Shoes" /></figure>
+        <figure className='h-60'><img src={image} alt="xiaomi" className='h-60'/></figure>
         <div className="card-body">
           <h2 className="card-title text-xl font-bold capitalize">{product}</h2>
           {/* first div */}
